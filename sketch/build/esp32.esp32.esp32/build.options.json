@@ -1,0 +1,9 @@
+{
+  "additionalFiles": "",
+  "compiler.optimization_flags": "-Os",
+  "customBuildProperties": "",
+  "fqbn": "esp32:esp32:esp32",
+  "hardwareFolders": "/home/pedro/.arduino15/packages/esp32/hardware/esp32/3.3.8,/home/pedro/.arduino15/packages/esp32/hardware/esp32/3.3.8",
+  "otherLibrariesFolders": "/home/pedro/Arduino/libraries",
+  "sketchLocation": "/home/pedro/Downloads/arduino-1.8.19-linux64/wokwi-relogio-esp32/sketch"
+}

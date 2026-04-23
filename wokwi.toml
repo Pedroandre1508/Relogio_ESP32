@@ -1,0 +1,7 @@
+# Wokwi for VS Code / Cursor — abrir esta pasta (onde esta diagram.json)
+# 1) ./compile-wokwi.sh  (arduino-cli 1.4+ grava em build/ na raiz)
+# 2) F1 -> "Wokwi: Start Simulator"
+[wokwi]
+version = 1
+firmware = "build/sketch.ino.merged.bin"
+elf = "build/sketch.ino.elf"

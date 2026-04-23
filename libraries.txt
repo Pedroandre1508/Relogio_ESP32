@@ -1,0 +1,3 @@
+# Wokwi Library List — https://docs.wokwi.com/guides/libraries
+# Só o necessario para o LCD; nada aqui pesa a compilacao (o nucleo do ESP32 e o pesado)
+LiquidCrystal
