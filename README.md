@@ -13,6 +13,37 @@ Projeto para **ESP32** com **LCD HD44780 (4 bits)**, três botões e LED, com re
 | `compile-wokwi.sh` | Compila o firmware localmente com `arduino-cli` |
 | `build/` | Gerada após a compilação (contém `.bin` e `.elf`) — pode ir para `.gitignore` |
 
+## Explicação simples do código
+
+O sketch funciona como uma pequena máquina de estados:
+
+1. `BOOT` - mostra a tela de inicialização por um instante.
+2. `RUN` - mostra o relógio em tempo normal.
+3. `CONFIG_H` - ajusta as horas.
+4. `CONFIG_M` - ajusta os minutos.
+5. `CRO` - cronómetro.
+
+Em vez de usar `delay()`, o programa usa `millis()` para continuar lendo os botões e atualizando o LCD sem travar o Arduino.
+
+### O que cada botão faz
+
+- **B1**: entra no modo de ajuste; no ajuste de hora/minuto, passa para a próxima etapa; no cronómetro, volta para o relógio normal.
+- **B2**: aumenta o valor em ajuste; no cronómetro, inicia ou pausa.
+- **B3**: diminui o valor em ajuste; no cronómetro, zera.
+
+### O que aparece no LCD
+
+- Na tela normal, a primeira linha mostra a hora no formato `HH:MM:SS`.
+- A segunda linha mostra mensagens curtas, como instruções ou confirmações.
+- No modo de ajuste, o valor escolhido pisca para ficar fácil de ver.
+- No cronómetro, o LED também ajuda a indicar o estado de execução.
+
+### Como o programa está organizado no `sketch.ino`
+
+- No início ficam os pinos, constantes de tempo e variáveis globais.
+- Depois vêm funções pequenas e específicas, como leitura dos botões, atualização do relógio, controle do LED e desenho do LCD.
+- No final ficam `setup()` e `loop()`, que apenas inicializam e chamam as rotinas principais.
+
 ## Pré-requisitos
 
 1. **arduino-cli** (v1.4+ recomendado)  
